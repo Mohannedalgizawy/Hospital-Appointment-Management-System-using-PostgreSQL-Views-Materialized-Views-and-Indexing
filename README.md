@@ -106,5 +106,10 @@ It includes:
 An index was created on the Patient FirstName column to speed up search operations.
 
 ```sql
+
 CREATE INDEX idx_patient_firstname
-ON Patient (FirstName);
+ON AppointmentDetails_MV(PatientFirstName);
+
+SELECT *
+FROM AppointmentDetails_MV
+WHERE PatientFirstName = 'Ahmed';
